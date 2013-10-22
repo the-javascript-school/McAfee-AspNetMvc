@@ -33,7 +33,11 @@
             <option value="Divide">Divide</option>
         </select>
         <input type="submit" name="btnSubmit" value="Calculate" />
-        
+        <ul>
+            @foreach(var item in @ViewBag.ErrorMessages){
+                <li>@item.Value</li>
+            }
+        </ul>
     </form>
 </body>
 </html>
