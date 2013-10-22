@@ -1,0 +1,39 @@
+﻿
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <style>
+        .error {
+            border : 1px solid red;
+            background-color : lightpink;
+        }
+    </style>
+</head>
+<body>
+    <form action="/Calculator/Index" method="post">
+        <div>
+            <span>Number 1:</span>
+            <input type="text" 
+                class ="@(ViewBag.ErrorMessages.ContainsKey("Number1") ? "error" : string.Empty)"
+                name="Number1" value="@ViewBag.CalculatorInput.Number1" />
+            <span>@(ViewBag.ErrorMessages.ContainsKey("Number1")?ViewBag.ErrorMessages["Number1"] : string.Empty)</span>
+        </div>
+        <div>
+            <span>Number 2:</span>
+            <input type="text" 
+                class ="@(ViewBag.ErrorMessages.ContainsKey("Number2") ? "error" : string.Empty)"
+                name="Number2" value="@ViewBag.CalculatorInput.Number2" />
+            <span>@(ViewBag.ErrorMessages.ContainsKey("Number2")?ViewBag.ErrorMessages["Number2"] : string.Empty)</span>
+        </div>
+        <select name="Operation">
+            <option value="Add">Add</option>
+            <option value="Subtract">Subtract</option>
+            <option value="Multiply">Multiply</option>
+            <option value="Divide">Divide</option>
+        </select>
+        <input type="submit" name="btnSubmit" value="Calculate" />
+        
+    </form>
+</body>
+</html>

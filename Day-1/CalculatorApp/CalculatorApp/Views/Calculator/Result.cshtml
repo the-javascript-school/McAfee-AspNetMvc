@@ -1,0 +1,20 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Calculator Result</title>
+</head>
+<body>
+    <div>
+        @{
+            var data = ViewBag.CalculatorResult;
+            }
+        Performing @data.Operation on @data.Number1 and @data.Number2 yields <strong>@data.Result</strong>
+    </div>
+</body>
+</html>
