@@ -1,0 +1,31 @@
+﻿@model TaskManager.Models.Todo
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Create Todo</title>
+    <style>
+        .input-validation-error {
+            border : 1px solid red;
+            background-color : lightpink;
+        }
+
+    </style>
+</head>
+<body>
+    @using(Html.BeginForm()){
+    <div>
+        <span>Description :</span>
+        @Html.TextBoxFor(m => m.Description)
+        <span>@Html.ValidationMessageFor(m => m.Description)</span>
+    </div>
+        <input type="submit" name="btnSubmit" value="Save" />
+    }
+</body>
+</html>

@@ -1,0 +1,24 @@
+﻿@using TaskManager.Models;
+@{
+    Layout = null;
+    
+}
+@model IEnumerable<Todo>
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>All Todos</title>
+</head>
+<body>
+    <h1>My Todo List</h1>
+    <ul>
+        @foreach (var t in Model) { 
+            <li>@t.Description @Html.ActionLink("Edit","Edit",new {Id = t.Id, Description = t.Description.Replace(' ','-')})</li>
+        }
+    </ul>
+    @Html.ActionLink("Add New","AddNew")
+</body>
+</html>

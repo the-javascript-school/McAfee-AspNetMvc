@@ -40,5 +40,10 @@ namespace TaskManager.Models
             }
         }
 
+
+        internal static void Add(Todo todo)
+        {
+            Add(todo.Description);
+        }
     }
 }
